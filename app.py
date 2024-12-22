@@ -9,7 +9,7 @@ st.title("Complejos Fe-sideróforos 3D")
 st.markdown("Autor: Jesus Alvarado-Huayhuaz")
 
 # URL del archivo .mol2 en GitHub
-mol2_file = "https://raw.githubusercontent.com/inefable12/fe_siderophores_database/main/complexes/Fe_sideroforos_mol21.mol2"
+github_url = "https://raw.githubusercontent.com/inefable12/fe_siderophores_database/main/complexes/Fe_sideroforos_mol21.mol2"
 
 # Función para cargar el archivo desde GitHub
 def fetch_mol2_file(url):
