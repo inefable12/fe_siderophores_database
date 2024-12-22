@@ -2,6 +2,7 @@ import streamlit as st
 from rdkit import Chem
 from rdkit.Chem.rdmolfiles import MolFromMol2File
 from stmol import showmol
+from rdkit.Chem import SanitizeMol
 
 # Título de la aplicación
 st.title("Visualizador de Moléculas 3D")
