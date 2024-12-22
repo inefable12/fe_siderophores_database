@@ -9,24 +9,6 @@ st.markdown("Autor: Jesus Alvarado-Huayhuaz")
 
 # Ruta del archivo mol2
 github_url = "https://raw.githubusercontent.com/inefable12/fe_siderophores_database/main/complexes/Fe_sideroforos_mol21.mol2"
-
-
-# Función para cargar y visualizar el archivo mol2
-def visualize_molecule_from_url(url):
-    try:
-        # Descargar el archivo
-        mol = MolFromMol2File(url, sanitize=True)
-        if mol:
-            # Convertir la molécula a formato MOL block
-            mol_block = Chem.MolToMolBlock(mol)
-            # Mostrar la molécula en 3D
-            st.subheader("Visualización 3D:")
-            showmol(mol_block, width=800, height=400)
-        else:
-            st.error("No se pudo procesar el archivo. Verifica que sea un archivo `.mol2` válido.")
-    except Exception as e:
-        st.error(f"Ocurrió un error al cargar el archivo: {e}")
-
-# Visualizar la molécula
-st.info("Cargando la molécula desde GitHub...")
-visualize_molecule_from_url(github_url)
+mol = MolFromMol2File(url, sanitize=True)
+mol_block = Chem.MolToMolBlock(mol)            
+showmol(mol_block, width=800, height=400)
