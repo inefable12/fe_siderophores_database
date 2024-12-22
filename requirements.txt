@@ -1,0 +1,4 @@
+rdkit-pypi
+py3Dmol
+stmol
+streamlit
