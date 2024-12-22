@@ -8,7 +8,7 @@ st.title("Visualizador de Moléculas 3D")
 st.markdown("Autor: Jesus Alvarado-Huayhuaz")
 
 # Ruta del archivo mol2
-github_url = "complexes/Fe_sideroforos_mol2.mol2"
+github_url = "/complexes/Fe_sideroforos_mol2.mol2"
 
 # Función para cargar y visualizar el archivo mol2
 def visualize_molecule_from_url(url):
