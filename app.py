@@ -8,7 +8,8 @@ st.title("Visualizador de Moléculas 3D")
 st.markdown("Autor: Jesus Alvarado-Huayhuaz")
 
 # Ruta del archivo mol2
-github_url = "complexes/Fe_sideroforos_mol21.mol2"
+github_url = "https://raw.githubusercontent.com/inefable12/fe_siderophores_database/main/complexes/Fe_sideroforos_mol21.mol2"
+
 
 # Función para cargar y visualizar el archivo mol2
 def visualize_molecule_from_url(url):
