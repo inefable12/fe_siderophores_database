@@ -16,7 +16,7 @@ base_url = "https://raw.githubusercontent.com/inefable12/fe_siderophores_databas
 mol2_files = [f"Fe_sideroforos_mol2{i}.mol2" for i in range(1, 331)]
 
 # Slider para seleccionar el archivo
-selected_index = st.slider("Selecciona una molécula", 1, len(mol2_files))
+selected_index = st.slider("Selecciona una molécula", 37, len(mol2_files))
 selected_file = mol2_files[selected_index - 1]
 
 # URL del archivo seleccionado
