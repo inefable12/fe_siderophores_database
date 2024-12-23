@@ -38,14 +38,14 @@ def visualize_molecule(mol_block):
     viewer.addModel(mol_block, "mol")
     viewer.setStyle({"elem": "Fe", "sphere": {"radius": 0.3, "color": "blue"}}) #metal
     #viewer.setStyle({"stick": {}})
-    view.setStyle({"elem": "C", "stick": {}})
-    view.setStyle({"elem": "H", "stick": {}})
-    view.setStyle({"elem": "O", "stick": {}})
-    view.setStyle({"elem": "N", "stick": {}})
-    view.setStyle({"elem": "S", "stick": {}})
-    view.setStyle({"elem": "F", "stick": {}})
-    view.setStyle({"elem": "Cl", "stick": {}})
-    view.setStyle({"elem": "P", "stick": {}})
+    viewer.setStyle({"elem": "C", "stick": {}})
+    viewer.setStyle({"elem": "H", "stick": {}})
+    viewer.setStyle({"elem": "O", "stick": {}})
+    viewer.setStyle({"elem": "N", "stick": {}})
+    viewer.setStyle({"elem": "S", "stick": {}})
+    viewer.setStyle({"elem": "F", "stick": {}})
+    #view.setStyle({"elem": "Cl", "stick": {}})
+    viewer.setStyle({"elem": "P", "stick": {}})
     viewer.zoomTo()
     return viewer
 
