@@ -37,6 +37,7 @@ def visualize_molecule(mol_block):
     viewer = py3Dmol.view(width=800, height=400)
     viewer.addModel(mol_block, "mol")
     viewer.setStyle({"stick": {}})
+    viewer.setStyle({"sphere": {"radius": 0.3, "color": "blue"}}) #metal
     viewer.zoomTo()
     return viewer
 
