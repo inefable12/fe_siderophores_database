@@ -34,7 +34,7 @@ def fetch_mol2_content(url):
 # Función para visualizar molécula con py3Dmol
 def visualize_molecule(mol_block):
     viewer = py3Dmol.view(width=800, height=400)
-    viewer.addModel(mol_block, "mol2")
+    viewer.addModel(mol_block, "mol")
     viewer.setStyle({"stick": {}})
     viewer.zoomTo()
     return viewer
@@ -58,17 +58,48 @@ if mol2_content:
 else:
     st.error("No se pudo cargar el archivo seleccionado.")
 
-xyz = '''4
-* (null), Energy   -1000.0000000
-N     0.000005    0.019779   -0.000003   -0.157114    0.000052   -0.012746
-H     0.931955   -0.364989    0.000003    1.507100   -0.601158   -0.004108
-H    -0.465975   -0.364992    0.807088    0.283368    0.257996   -0.583024
-H    -0.465979   -0.364991   -0.807088    0.392764    0.342436    0.764260
-'''
-xyzview = py3Dmol.view(width=400,height=400)
-xyzview.addModel(xyz,'xyz',{'vibrate': {'frames':10,'amplitude':1}})
-xyzview.setStyle({'stick':{}})
-xyzview.setBackgroundColor('0xeeeeee')
-xyzview.animate({'loop': 'backAndForth'})
-xyzview.zoomTo()
-xyzview.show()
+
+######################################
+######################################
+######################################
+import streamlit as st
+import requests
+from rdkit import Chem
+from rdkit.Chem import rdmolfiles
+from io import StringIO
+
+# Función para leer el archivo MOL2 desde GitHub
+def fetch_mol2_from_github(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.text
+    else:
+        return None
+
+# Función para convertir MOL2 a SMILES
+def mol2_to_smiles(mol2_data):
+    mol = rdmolfiles.MolFromMol2Block(mol2_data)
+    if mol:
+        return Chem.MolToSmiles(mol)
+    else:
+        return None
+
+# Título de la aplicación
+st.title('Conversión de MOL2 a SMILES')
+
+# Ingreso de la URL del archivo MOL2 desde GitHub
+##url = st.text_input('Ingresa la URL del archivo MOL2 en GitHub:', 'https://github.com/usuario/repositorio/archivo.mol2')
+
+# Botón para convertir el archivo MOL2 a SMILES
+if st.button('Convertir a SMILES'):
+    mol2_data = fetch_mol2_from_github(mol2_content)
+    
+    if mol2_data:
+        smiles = mol2_to_smiles(mol2_data)
+        
+        if smiles:
+            st.write(f"El SMILES generado es: {smiles}")
+        else:
+            st.error("No se pudo convertir el archivo MOL2 a SMILES.")
+    else:
+        st.error("No se pudo descargar el archivo MOL2 desde GitHub.")
