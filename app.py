@@ -12,7 +12,7 @@ st.markdown("Autor: Jesus Alvarado-Huayhuaz")
 base_url = "https://raw.githubusercontent.com/inefable12/fe_siderophores_database/main/complexes/"
 
 # Generar lista de nombres de archivos
-mol2_files = [f"Fe_sideroforos_mol{i}.mol2" for i in range(1, 201)]
+mol2_files = [f"Fe_sideroforos_mol2{i}.mol2" for i in range(1, 201)]
 
 # Slider para seleccionar el archivo
 selected_index = st.slider("Selecciona una molécula", 1, len(mol2_files))
