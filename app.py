@@ -46,6 +46,7 @@ def visualize_molecule(mol_block):
     viewer.setStyle({"elem": "F", "stick": {}})
     #view.setStyle({"elem": "Cl", "stick": {}})
     viewer.setStyle({"elem": "P", "stick": {}})
+    viewer.setBackgroundColor("white")
     viewer.zoomTo()
     return viewer
 
