@@ -36,7 +36,7 @@ def fetch_mol2_content(url):
 def visualize_molecule(mol_block):
     viewer = py3Dmol.view(width=800, height=400)
     viewer.addModel(mol_block, "mol")
-    viewer.setStyle({"elem": "Fe1", "sphere": {"radius": 0.4, "color": "orange"}})
+    viewer.setStyle({"elem": "Fe", "sphere": {"radius": 0.4, "color": "orange"}})
     viewer.addModel(mol_block, "mol")
     #viewer.setStyle({"stick": {}})
     viewer.setStyle({"elem": "C", "stick": {}})
@@ -52,7 +52,7 @@ def visualize_molecule(mol_block):
     return viewer
 
 # Leer el archivo .mol2 desde GitHub
-st.info(f"Cargando la molécula: {selected_file}")
+st.info(f"Molécula: {selected_file}")
 mol2_content = fetch_mol2_content(selected_url)
 
 if mol2_content:
@@ -62,7 +62,7 @@ if mol2_content:
         # Convertir a formato MOL block para py3Dmol
         mol_block = MolToMolBlock(mol)
         # Mostrar la molécula en 3D
-        st.subheader(f"Visualización 3D de: {selected_file}")
+        st.subheader(f"Complejo: {selected_file}")
         viewer = visualize_molecule(mol_block)
         viewer.show()
         showmol(viewer, height=400, width=800) #j1
