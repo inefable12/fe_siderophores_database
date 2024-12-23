@@ -34,7 +34,7 @@ def fetch_mol2_content(url):
 
 # Función para visualizar molécula con py3Dmol
 def visualize_molecule(mol_block):
-    viewer = py3Dmol.view(width=800, height=400)
+    viewer = py3Dmol.view(width=800, height=500)
     viewer.addModel(mol_block, "mol")
     viewer.setStyle({"elem": "Fe", "sphere": {"radius": 0.4, "color": "orange"}})
     viewer.addModel(mol_block, "mol")
