@@ -53,12 +53,13 @@ if mol2_content:
         st.subheader(f"Visualización 3D de: {selected_file}")
         viewer = visualize_molecule(mol_block)
         viewer.show()
+        showmol(viewer, height=400, width=500) #j1
     else:
         st.error(f"No se pudo procesar el archivo {selected_file}. Verifica su contenido.")
 else:
     st.error("No se pudo cargar el archivo seleccionado.")
 
-
+show_3d(smiles)
 ######################################
 ######################################
 ######################################
