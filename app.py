@@ -37,6 +37,7 @@ def visualize_molecule(mol_block):
     viewer = py3Dmol.view(width=800, height=400)
     viewer.addModel(mol_block, "mol")
     #viewer.setStyle({"stick": {}})
+    viewer.setStyle({"elem": "Fe", "sphere": {"radius": 0.4, "color": "orange"}})
     viewer.setStyle({"elem": "C", "stick": {}})
     viewer.setStyle({"elem": "H", "stick": {}})
     viewer.setStyle({"elem": "O", "stick": {}})
@@ -45,10 +46,8 @@ def visualize_molecule(mol_block):
     viewer.setStyle({"elem": "F", "stick": {}})
     #view.setStyle({"elem": "Cl", "stick": {}})
     viewer.setStyle({"elem": "P", "stick": {}})
-    #viewer.addModel(f"{atom['element']} {atom['coords'][0]} {atom['coords'][1]} {atom['coords'][2]}", "mol2")
-    viewer.setStyle({"elem": "Fe", "sphere": {"radius": 0.9, "color": "blue"}}) #metal
     viewer.setBackgroundColor("white")
-    viewer.zoomTo()
+    #viewer.zoomTo()
     return viewer
 
 # Leer el archivo .mol2 desde GitHub
