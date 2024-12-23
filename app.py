@@ -36,7 +36,7 @@ def fetch_mol2_content(url):
 def visualize_molecule(mol_block):
     viewer = py3Dmol.view(width=800, height=400)
     viewer.addModel(mol_block, "mol")
-    viewer.setStyle({"elem": "Fe", "sphere": {"radius": 0.3, "color": "blue"}}) #metal
+    viewer.setStyle({"elem": "FE", "sphere": {"radius": 0.3, "color": "blue"}}) #metal
     #viewer.setStyle({"stick": {}})
     viewer.setStyle({"elem": "C", "stick": {}})
     viewer.setStyle({"elem": "H", "stick": {}})
