@@ -3,6 +3,7 @@ import py3Dmol
 import requests
 from rdkit import Chem
 from rdkit.Chem.rdmolfiles import MolToMolBlock, MolFromMol2Block
+from stmol import showmol
 
 # Título de la aplicación
 st.title("Complejos Fe-sideróforos 3D")
