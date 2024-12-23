@@ -57,3 +57,18 @@ if mol2_content:
         st.error(f"No se pudo procesar el archivo {selected_file}. Verifica su contenido.")
 else:
     st.error("No se pudo cargar el archivo seleccionado.")
+
+xyz = '''4
+* (null), Energy   -1000.0000000
+N     0.000005    0.019779   -0.000003   -0.157114    0.000052   -0.012746
+H     0.931955   -0.364989    0.000003    1.507100   -0.601158   -0.004108
+H    -0.465975   -0.364992    0.807088    0.283368    0.257996   -0.583024
+H    -0.465979   -0.364991   -0.807088    0.392764    0.342436    0.764260
+'''
+xyzview = py3Dmol.view(width=400,height=400)
+xyzview.addModel(xyz,'xyz',{'vibrate': {'frames':10,'amplitude':1}})
+xyzview.setStyle({'stick':{}})
+xyzview.setBackgroundColor('0xeeeeee')
+xyzview.animate({'loop': 'backAndForth'})
+xyzview.zoomTo()
+xyzview.show()
