@@ -45,7 +45,8 @@ def visualize_molecule(mol_block):
     viewer.setStyle({"elem": "F", "stick": {}})
     #view.setStyle({"elem": "Cl", "stick": {}})
     viewer.setStyle({"elem": "P", "stick": {}})
-    viewer.setStyle({"elem": "FE", "sphere": {"radius": 0.9, "color": "blue"}}) #metal
+    #viewer.addModel(f"{atom['element']} {atom['coords'][0]} {atom['coords'][1]} {atom['coords'][2]}", "mol2")
+    viewer.setStyle({"elem": "Fe", "sphere": {"radius": 0.9, "color": "blue"}}) #metal
     viewer.setBackgroundColor("white")
     viewer.zoomTo()
     return viewer
