@@ -45,7 +45,7 @@ def visualize_molecule(mol_block):
     viewer.setStyle({"elem": "F", "stick": {}})
     #view.setStyle({"elem": "Cl", "stick": {}})
     viewer.setStyle({"elem": "P", "stick": {}})
-    viewer.addModel(mol_block, "mol")
+    viewer.addModel(mol_block, "mol2")
     viewer.setStyle({"elem": "Fe", "sphere": {"radius": 0.4, "color": "orange"}})
     viewer.setBackgroundColor("white")
     #viewer.zoomTo()
